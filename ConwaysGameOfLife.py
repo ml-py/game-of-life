@@ -5,7 +5,7 @@ def is_alive(  was_alive,  num_neighbours  ):
     if  was_alive:        return 2 <= num_neighbours <= 3
     else         :        return      num_neighbours == 3
 
-def get_ei8ht_neighbours(  board,  ii,  jj  )-> list :
+def get_sixteen_neighbours(  board,  ii,  jj  )-> list :
 	result = []
 	for  x  in  board[  ii-1  ][  jj-1  :  jj+2        ]:        result.append(x)
 	for  x  in  board[  ii    ][  jj-1  :  jj+2  :  2  ]:        result.append(x)

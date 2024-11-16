@@ -20,17 +20,21 @@ class TestGameOfLife( unittest.TestCase ):
         self.assertTrue ( ConwaysGameOfLife.is_alive(  False, 3  ) ) # BORN TO LIFE
 
 
-    def test_get_ei8ht_neighbours(self):
-        board    = [   [1, 1, 0],
-                       [0, 9, 1],
-                       [0, 0, 0]   ]
-        expected = [    1, 1, 0 ,
-                        0,    1 ,
-                        0, 0, 0    ]
+    def test_get_sixteen_neighbours(self):
+        board    = [   [   [1, 1, 0],  [0, 9, 1],  [0, 0, 0]   ],
+                       [   [1, 1, 0],  [0, 9, 1],  [0, 0, 0]   ],
+                       [   [1, 1, 0],  [0, 9, 1],  [0, 0, 0]   ]   ]
+        expected = [        1, 1, 0 ,   0, 9, 1 ,   0, 0, 0     ,
+                            1, 1, 0 ,   0,    1 ,   0, 0, 0     ,
+                            1, 1, 0 ,   0, 9, 1 ,   0, 0, 0        ]
         self.assertEqual(  expected,  ConwaysGameOfLife.get_ei8ht_neighbours( board, 1, 1 )  )
-    def test_get_ei8ht_neighbours__lewy(self):
-        board    = [   [2873641, "asdfsjdf", 3],  [4, 5, 6],  [7, 8, 9]   ]
-        expected = [    2873641, "asdfsjdf", 3 ,   4,    6 ,   7, 8, 9    ]
+    def test_get_sixteen_neighbours__lewy(self):
+        board    = [   [   [2873641, "asdfsjdf", 3],  [4, 5, 6],  [7, 8, 9]   ],
+                       [   [2873641, "asdfsjdf", 3],  [4, 5, 6],  [7, 8, 9]   ],
+                       [   [2873641, "asdfsjdf", 3],  [4, 5, 6],  [7, 8, 9]   ]   ]
+        expected = [        2873641, "asdfsjdf", 3 ,   4, 5, 6 ,   7, 8, 9,
+                            2873641, "asdfsjdf", 3 ,   4,    6 ,   7, 8, 9,
+                            2873641, "asdfsjdf", 3 ,   4, 5, 6 ,   7, 8, 9        ]
         self.assertEqual(  expected,  ConwaysGameOfLife.get_ei8ht_neighbours( board, 1, 1 )  )
 
 
